@@ -2,12 +2,12 @@ import { urlFor } from "../lib/client";
 import map from "../public/map.svg";
 import Image from "next/image";
 
-export default function Card(props) {
+export default function TripsTakenCard(props) {
   return (
     <div className="card-container">
       <span className="image-container">
         <Image
-          src={urlFor(props.image).url()}
+          src={urlFor(props.image).width(450).url()}
           alt=""
           width={1080}
           height={720}
@@ -22,9 +22,6 @@ export default function Card(props) {
           </a>
         </span>
         <h1 className="title">{props.title}</h1>
-        <p className="dates">
-          {props.startDate} - {props.endDate}
-        </p>
         <p className="description">{props.description}</p>
       </span>
     </div>
